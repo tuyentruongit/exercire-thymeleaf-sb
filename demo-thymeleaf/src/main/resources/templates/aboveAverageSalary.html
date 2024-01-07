@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Danh sách người có mức lương lớn hơn mức lương trung bình</h1>
+<button>
+    <a th:href="@{/}"> Quay Lại </a>
+</button>
+<table th:border="1">
+    <thead>
+    <tr>
+        <th>Mức Lương Trên Trung Bình</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="name : ${aboveAverageSalary}">
+        <td > Name : <th:block th:text="${name.fullName}"></th:block></td>
+        <td > Mức lương : <th:block th:text="${name.salary}"></th:block> $</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

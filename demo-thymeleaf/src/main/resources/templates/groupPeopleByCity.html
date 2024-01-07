@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Danh sách các thành phố và danh sách người đang sống ở thành phố đó</h1>
+<button>
+    <a th:href="@{/}"> Quay Lại </a>
+</button>
+<table border="1">
+    <thead>
+     <tr>
+         <th>Tên Thành Phố</th>
+         <th> Người đang sống ở thành phố đó </th>
+     </tr>
+    </thead>
+
+
+    <tbody>
+    <tr th:each="entry : ${groupByCity}">
+        <td th:text="${entry.key}">
+        </td>
+        <td>
+            <ul>
+                <li th:each="person : ${entry.value}" > Name Person : <th:block th:text="${person.fullName}"></th:block> </li>
+            </ul>
+        </td>
+      </tr>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

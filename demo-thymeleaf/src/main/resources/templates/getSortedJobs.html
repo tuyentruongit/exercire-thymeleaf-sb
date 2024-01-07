@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>GetSortedJobs</title>
+</head>
+<body>
+<h1> Danh sách tất cả nghề nghiệp đã được sắp xếp từ A-Z </h1>
+<button>
+    <a th:href="@{/}"> Quay Lại </a>
+</button>
+<table th:border="1">
+    <thead>
+      <tr>
+          <th>Job</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr th:each="job : ${Job}">
+          <td th:text="${job}"></td>
+      </tr>
+    </tbody>
+</table>
+</body>
+</html>

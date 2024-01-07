@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sortPeopleByFullName</title>
+</head>
+<body>
+<h1>Danh sách sắp xếp theo tên Name từ A-Z</h1>
+<button>
+    <a th:href="@{/}"> Quay Lại </a>
+</button>
+<table border="1" >
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Job</th>
+        <th>Gender</th>
+        <th>City</th>
+        <th>Salary</th>
+        <th>Birthday</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person : ${namePerson}">
+        <td th:text="${person.id}"></td>
+        <td th:text="${person.fullName}"></td>
+        <td th:text="${person.job}"></td>
+        <td th:text="${person.gender}"></td>
+        <td th:text="${person.city}"></td>
+        <td th:text="${person.salary}"></td>
+        <td th:text="${person.birthday}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
